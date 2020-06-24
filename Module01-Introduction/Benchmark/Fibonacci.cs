@@ -3,7 +3,8 @@ using BenchmarkDotNet.Attributes;
 
 namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
 {
-    [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true)]
+    [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true, printSource: true)]
+    [MemoryDiagnoser]
     public class FibonacciCalc
     {
         // HOMEWORK:
@@ -22,18 +23,61 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
             return Recursive(n - 2) + Recursive(n - 1);
         }
 
+        private Dictionary<ulong, ulong> _memoizedData = new Dictionary<ulong, ulong>();
+
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public ulong RecursiveWithMemoization(ulong n)
         {
-            return 0;
+            if (n == 1 || n == 2) return 1;
+            
+            if (_memoizedData.TryGetValue(n, out ulong r))
+                return r;
+            
+            var result = RecursiveWithMemoization(n - 2) + RecursiveWithMemoization(n - 1);
+
+            _memoizedData.Add(n, result);
+
+            return result;
         }
-        
+
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
+        public ulong IterativeDictionary(ulong n)
+        {
+            if (n == 1 || n == 2) return 1;
+
+            var cache = new Dictionary<ulong, ulong> { { 1, 1 }, { 2, 1 } };
+            var i = 3u;
+
+            while (i <= n)
+            {
+                cache[i] = cache[i - 1] + cache[i - 2];
+                i++;
+            }
+
+            return cache[n];
+        }
+
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public ulong Iterative(ulong n)
         {
-            return 0;
+            if (n == 1 || n == 2) return 1;
+
+            ulong current = 1;
+            ulong previous = 1;
+
+            var i = 3u;
+            while (i <= n)
+            {
+                ulong next = previous + current;
+                previous = current;
+                current = next;
+                i++;
+            }
+
+            return current;
         }
 
         public IEnumerable<ulong> Data()
