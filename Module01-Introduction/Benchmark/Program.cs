@@ -11,7 +11,7 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         static void Main(string[] args)
         {
             var assemblies =
-                new[] {Assembly.GetExecutingAssembly(), Assembly.GetAssembly(typeof(Benchmarks.FibonacciCalcFSharp))};
+                new[] { Assembly.GetExecutingAssembly(), Assembly.GetAssembly(typeof(Benchmarks.FibonacciCalcFSharp)) };
 
             BenchmarkSwitcher.FromAssemblies(assemblies).Run(args);
         }

@@ -12,19 +12,20 @@ module Benchmarks =
 
         [<Benchmark>]
         [<ArgumentsSource("Data")>]
-        member __.RecursiveMemoized(n: uint64) =
+        member __.RecursiveMemoized(n: int) =
             let memo n =
-                let cache = Dictionary<uint64, uint64>()
-                cache.Add(1uL, 1uL)
-                cache.Add(2uL, 1uL)
+                let cache = 
+                    Dictionary<int, uint64>()
+                cache.Add(1, 1uL)
+                cache.Add(2, 1uL)
 
                 let rec go = function
-                    | 1uL | 2uL -> 1uL
+                    | 1 | 2 -> 1uL
                     | n ->
                         let found, r = cache.TryGetValue n
                         if found then r
                         else 
-                            let r = go (n - 1uL) + go (n - 2uL)
+                            let r = go (n - 1) + go (n - 2)
                             cache.Add(n, r)
                             r
 

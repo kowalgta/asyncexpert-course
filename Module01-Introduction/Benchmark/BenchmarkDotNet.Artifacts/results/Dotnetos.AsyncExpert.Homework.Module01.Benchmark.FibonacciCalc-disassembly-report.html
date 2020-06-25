@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20200624-221721</title>
+<title>DisassemblyDiagnoser Output Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20200625-225824</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -31,9 +31,9 @@ sub       rsp,20
 mov       rdi,rcx
 mov       rsi,rdx
 cmp       rsi,1
-je        short 00007FFE42754969
+je        short 00007FFA5C5F44C9
 cmp       rsi,2
-jne       short 00007FFE42754976
+jne       short 00007FFA5C5F44D6
 mov       eax,1
 add       rsp,20
 pop       rbx
@@ -64,9 +64,9 @@ sub       rsp,20
 mov       rdi,rcx
 mov       rsi,rdx
 cmp       rsi,1
-je        short 00007FFE427645E9
+je        short 00007FFA5C5D4139
 cmp       rsi,2
-jne       short 00007FFE427645F6
+jne       short 00007FFA5C5D4146
 mov       eax,1
 add       rsp,20
 pop       rbx
@@ -102,591 +102,163 @@ ret
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
-Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-push      rdi
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(Int32)
 push      rsi
-push      rbx
 sub       rsp,30
 xor       eax,eax
 mov       [rsp+28],rax
-mov       rdi,rcx
-mov       rsi,rdx
-cmp       rsi,1
-je        short 00007FFE42775070
-cmp       rsi,2
-jne       short 00007FFE4277507D
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5D4618
+cmp       esi,2
+jne       short 00007FFA5C5D4623
 mov       eax,1
 add       rsp,30
-pop       rbx
 pop       rsi
-pop       rdi
 ret
-mov       rcx,[rdi+8]
-lea       r8,[rsp+28]
-mov       rdx,rsi
-cmp       [rcx],ecx
-call      qword ptr [7FFE42784858]
-test      eax,eax
-je        short 00007FFE427750A2
-mov       rax,[rsp+28]
+lea       edx,[rsi+1]
+movsxd    rdx,edx
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       [rsp+28],rax
+mov       rdx,[rsp+28]
+cmp       dword ptr [rdx+8],1
+jbe       short 00007FFA5C5D4680
+mov       rdx,[rsp+28]
+mov       qword ptr [rdx+18],1
+mov       rdx,[rsp+28]
+cmp       dword ptr [rdx+8],2
+jbe       short 00007FFA5C5D4680
+mov       rdx,[rsp+28]
+mov       qword ptr [rdx+20],1
+lea       rdx,[rsp+28]
+mov       ecx,esi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+nop
 add       rsp,30
-pop       rbx
 pop       rsi
-pop       rdi
-ret
-lea       rdx,[rsi+0FFFE]
-mov       rcx,rdi
-call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-mov       rbx,rax
-lea       rdx,[rsi+0FFFF]
-mov       rcx,rdi
-call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-add       rbx,rax
-mov       rcx,[rdi+8]
-mov       edx,[rcx]
-mov       rdx,rsi
-mov       r8,rbx
-mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
-mov       rax,rbx
-add       rsp,30
-pop       rbx
-pop       rsi
-pop       rdi
-ret
-
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryGetValue(UInt64, UInt64 ByRef)
-push      rdi
-push      rsi
-sub       rsp,28
-mov       rsi,rcx
-mov       rdi,r8
-mov       rcx,rsi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(UInt64)
-test      eax,eax
-jl        short 00007FFE4277513C
-mov       rdx,[rsi+10]
-cmp       eax,[rdx+8]
-jae       short 00007FFE42775148
-movsxd    rax,eax
-lea       rax,[rax+rax*2]
-mov       rax,[rdx+rax*8+20]
-mov       [rdi],rax
-mov       eax,1
-add       rsp,28
-pop       rsi
-pop       rdi
-ret
-xor       eax,eax
-mov       [rdi],rax
-add       rsp,28
-pop       rsi
-pop       rdi
 ret
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
-push      r15
-push      r14
-push      r13
-push      r12
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
 push      rdi
 push      rsi
-push      rbp
 push      rbx
-sub       rsp,48
-mov       rsi,rcx
+sub       rsp,20
+mov       esi,ecx
 mov       rdi,rdx
-mov       rbx,r8
-mov       ebp,r9d
-cmp       qword ptr [rsi+8],0
-jne       short 00007FFE4277357D
-mov       rcx,rsi
-xor       edx,edx
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
-mov       r14,[rsi+10]
-mov       r15,[rsi+18]
-test      r15,r15
-je        short 00007FFE427735A7
-mov       rcx,r15
+mov       rax,[rdi]
+cmp       esi,[rax+8]
+jae       short 00007FFA5C5D45DD
+movsxd    rcx,esi
+mov       rax,[rax+rcx*8+10]
+test      rax,rax
+je        short 00007FFA5C5D45A9
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       ecx,[rsi+0FFFE]
 mov       rdx,rdi
-mov       r11,7FFE423F0408
-cmp       [rcx],ecx
-call      qword ptr [7FFE42780408]
-mov       r12d,eax
-jmp       short 00007FFE427735B4
-mov       rax,rdi
-shr       rax,20
-mov       r12d,eax
-xor       r12d,edi
-xor       r13d,r13d
-mov       rcx,[rsi+8]
-mov       r8,rcx
-mov       eax,r12d
-xor       edx,edx
-div       dword ptr [rcx+8]
-cmp       edx,[r8+8]
-jae       near ptr 00007FFE427737EA
-movsxd    rax,edx
-lea       r9,[r8+rax*4+10]
-mov       r10d,[r9]
-dec       r10d
-test      r15,r15
-jne       short 00007FFE42773659
-mov       r15d,[r14+8]
-cmp       r15d,r10d
-jbe       near ptr 00007FFE427736FE
-movsxd    r10,r10d
-lea       rax,[r10+r10*2]
-lea       rdx,[r14+rax*8+10]
-cmp       [rdx+4],r12d
-jne       short 00007FFE42773613
-mov       rcx,[rdx+8]
-cmp       rcx,rdi
-sete      cl
-movzx     ecx,cl
-test      ecx,ecx
-jne       short 00007FFE42773626
-mov       r10d,[r14+rax*8+10]
-cmp       r15d,r13d
-jle       near ptr 00007FFE427737D5
-inc       r13d
-jmp       short 00007FFE427735E7
-movzx     r13d,bpl
-cmp       r13d,1
-jne       short 00007FFE4277363C
-mov       [rdx+10],rbx
-inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE427737B6
-cmp       r13d,2
-je        near ptr 00007FFE427737CC
-xor       eax,eax
-add       rsp,48
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+mov       rbx,rax
+lea       ecx,[rsi+0FFFF]
+mov       rdx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+add       rax,rbx
+mov       rdx,[rdi]
+cmp       esi,[rdx+8]
+jae       short 00007FFA5C5D45DD
+movsxd    rcx,esi
+mov       [rdx+rcx*8+10],rax
+add       rsp,20
 pop       rbx
-pop       rbp
 pop       rsi
 pop       rdi
-pop       r12
-pop       r13
-pop       r14
-pop       r15
 ret
-mov       edx,[r14+8]
-mov       eax,edx
-mov       [rsp+3C],eax
-cmp       eax,r10d
-jbe       short 00007FFE427736C9
-movsxd    rdx,r10d
-lea       r10,[rdx+rdx*2]
-mov       [rsp+40],r10
-lea       r11,[r14+r10*8+10]
-cmp       [r11+4],r12d
-jne       short 00007FFE427736DF
-mov       [rsp+30],r9
-mov       [rsp+28],r11
-mov       rdx,[r11+8]
-mov       rcx,r15
-mov       r8,rdi
-mov       r11,7FFE423F0400
-cmp       [rcx],ecx
-call      qword ptr [7FFE42780400]
-test      eax,eax
-mov       r9,[rsp+30]
-je        short 00007FFE427736DF
-movzx     r13d,bpl
-cmp       r13d,1
-jne       short 00007FFE427736D0
-mov       r13,[rsp+28]
-mov       [r13+10],rbx
-inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE427737B6
-mov       r15d,[rsp+3C]
-jmp       short 00007FFE427736FE
-cmp       r13d,2
-je        near ptr 00007FFE427737DB
-jmp       near ptr 00007FFE42773646
-mov       r10,[rsp+40]
-mov       r10d,[r14+r10*8+10]
-mov       eax,[rsp+3C]
-cmp       eax,r13d
-jle       near ptr 00007FFE427737E4
-inc       r13d
-jmp       near ptr 00007FFE42773659
-xor       ebp,ebp
-mov       ecx,[rsi+38]
-test      ecx,ecx
-jle       short 00007FFE42773717
-mov       r13d,[rsi+34]
-mov       ebp,1
-dec       ecx
-mov       [rsi+38],ecx
-jmp       short 00007FFE42773766
-mov       ecx,[rsi+30]
-mov       r13d,ecx
-cmp       r15d,r13d
-jne       short 00007FFE4277375B
-call      System.Collections.HashHelpers.ExpandPrime(Int32)
-mov       edx,eax
-mov       rcx,rsi
-xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
-mov       rcx,[rsi+8]
-mov       r8,rcx
-mov       eax,r12d
-xor       edx,edx
-div       dword ptr [rcx+8]
-cmp       edx,[r8+8]
-jae       near ptr 00007FFE427737EA
-movsxd    rax,edx
-lea       r9,[r8+rax*4+10]
-mov       r15,r9
-mov       r9,r15
-lea       eax,[r13+1]
-mov       [rsi+30],eax
-mov       r14,[rsi+10]
-mov       eax,[r14+8]
-cmp       r13d,eax
-jae       short 00007FFE427737EA
-movsxd    rcx,r13d
-lea       rcx,[rcx+rcx*2]
-lea       rcx,[r14+rcx*8+10]
-test      ebp,ebp
-je        short 00007FFE4277379A
-mov       edx,[rsi+34]
-cmp       edx,eax
-jae       short 00007FFE427737EA
-movsxd    rax,edx
-lea       rax,[rax+rax*2]
-mov       eax,[r14+rax*8+10]
-neg       eax
-add       eax,0FFFFFFFD
-mov       [rsi+34],eax
-mov       [rcx+4],r12d
-mov       eax,[r9]
-dec       eax
-mov       [rcx],eax
-mov       [rcx+8],rdi
-mov       [rcx+10],rbx
-inc       r13d
-mov       [r9],r13d
-inc       dword ptr [rsi+3C]
-mov       eax,1
-add       rsp,48
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r12
-pop       r13
-pop       r14
-pop       r15
-ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
-int       3
-call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
-int       3
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
-int       3
-call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
-int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-push      rdi
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(Int32)
 push      rsi
-push      rbx
 sub       rsp,30
 xor       eax,eax
 mov       [rsp+28],rax
-mov       rdi,rcx
-mov       rsi,rdx
-cmp       rsi,1
-je        short 00007FFE42765070
-cmp       rsi,2
-jne       short 00007FFE4276507D
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5F4618
+cmp       esi,2
+jne       short 00007FFA5C5F4623
 mov       eax,1
 add       rsp,30
-pop       rbx
 pop       rsi
-pop       rdi
 ret
-mov       rcx,[rdi+8]
-lea       r8,[rsp+28]
-mov       rdx,rsi
-cmp       [rcx],ecx
-call      qword ptr [7FFE42774858]
-test      eax,eax
-je        short 00007FFE427650A2
-mov       rax,[rsp+28]
+lea       edx,[rsi+1]
+movsxd    rdx,edx
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       [rsp+28],rax
+mov       rdx,[rsp+28]
+cmp       dword ptr [rdx+8],1
+jbe       short 00007FFA5C5F4680
+mov       rdx,[rsp+28]
+mov       qword ptr [rdx+18],1
+mov       rdx,[rsp+28]
+cmp       dword ptr [rdx+8],2
+jbe       short 00007FFA5C5F4680
+mov       rdx,[rsp+28]
+mov       qword ptr [rdx+20],1
+lea       rdx,[rsp+28]
+mov       ecx,esi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+nop
 add       rsp,30
-pop       rbx
 pop       rsi
-pop       rdi
-ret
-lea       rdx,[rsi+0FFFE]
-mov       rcx,rdi
-call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-mov       rbx,rax
-lea       rdx,[rsi+0FFFF]
-mov       rcx,rdi
-call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
-add       rbx,rax
-mov       rcx,[rdi+8]
-mov       edx,[rcx]
-mov       rdx,rsi
-mov       r8,rbx
-mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
-mov       rax,rbx
-add       rsp,30
-pop       rbx
-pop       rsi
-pop       rdi
-ret
-
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryGetValue(UInt64, UInt64 ByRef)
-push      rdi
-push      rsi
-sub       rsp,28
-mov       rsi,rcx
-mov       rdi,r8
-mov       rcx,rsi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(UInt64)
-test      eax,eax
-jl        short 00007FFE4276513C
-mov       rdx,[rsi+10]
-cmp       eax,[rdx+8]
-jae       short 00007FFE42765148
-movsxd    rax,eax
-lea       rax,[rax+rax*2]
-mov       rax,[rdx+rax*8+20]
-mov       [rdi],rax
-mov       eax,1
-add       rsp,28
-pop       rsi
-pop       rdi
-ret
-xor       eax,eax
-mov       [rdi],rax
-add       rsp,28
-pop       rsi
-pop       rdi
 ret
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
-push      r15
-push      r14
-push      r13
-push      r12
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
 push      rdi
 push      rsi
-push      rbp
 push      rbx
-sub       rsp,48
-mov       rsi,rcx
+sub       rsp,20
+mov       esi,ecx
 mov       rdi,rdx
-mov       rbx,r8
-mov       ebp,r9d
-cmp       qword ptr [rsi+8],0
-jne       short 00007FFE4276357D
-mov       rcx,rsi
-xor       edx,edx
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
-mov       r14,[rsi+10]
-mov       r15,[rsi+18]
-test      r15,r15
-je        short 00007FFE427635A7
-mov       rcx,r15
+mov       rax,[rdi]
+cmp       esi,[rax+8]
+jae       short 00007FFA5C5F45DD
+movsxd    rcx,esi
+mov       rax,[rax+rcx*8+10]
+test      rax,rax
+je        short 00007FFA5C5F45A9
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       ecx,[rsi+0FFFE]
 mov       rdx,rdi
-mov       r11,7FFE423E0408
-cmp       [rcx],ecx
-call      qword ptr [7FFE42770408]
-mov       r12d,eax
-jmp       short 00007FFE427635B4
-mov       rax,rdi
-shr       rax,20
-mov       r12d,eax
-xor       r12d,edi
-xor       r13d,r13d
-mov       rcx,[rsi+8]
-mov       r8,rcx
-mov       eax,r12d
-xor       edx,edx
-div       dword ptr [rcx+8]
-cmp       edx,[r8+8]
-jae       near ptr 00007FFE427637EA
-movsxd    rax,edx
-lea       r9,[r8+rax*4+10]
-mov       r10d,[r9]
-dec       r10d
-test      r15,r15
-jne       short 00007FFE42763659
-mov       r15d,[r14+8]
-cmp       r15d,r10d
-jbe       near ptr 00007FFE427636FE
-movsxd    r10,r10d
-lea       rax,[r10+r10*2]
-lea       rdx,[r14+rax*8+10]
-cmp       [rdx+4],r12d
-jne       short 00007FFE42763613
-mov       rcx,[rdx+8]
-cmp       rcx,rdi
-sete      cl
-movzx     ecx,cl
-test      ecx,ecx
-jne       short 00007FFE42763626
-mov       r10d,[r14+rax*8+10]
-cmp       r15d,r13d
-jle       near ptr 00007FFE427637D5
-inc       r13d
-jmp       short 00007FFE427635E7
-movzx     r13d,bpl
-cmp       r13d,1
-jne       short 00007FFE4276363C
-mov       [rdx+10],rbx
-inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE427637B6
-cmp       r13d,2
-je        near ptr 00007FFE427637CC
-xor       eax,eax
-add       rsp,48
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+mov       rbx,rax
+lea       ecx,[rsi+0FFFF]
+mov       rdx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.<RecursiveWithMemoization>g__Go|1_0(Int32, <>c__DisplayClass1_0 ByRef)
+add       rax,rbx
+mov       rdx,[rdi]
+cmp       esi,[rdx+8]
+jae       short 00007FFA5C5F45DD
+movsxd    rcx,esi
+mov       [rdx+rcx*8+10],rax
+add       rsp,20
 pop       rbx
-pop       rbp
 pop       rsi
 pop       rdi
-pop       r12
-pop       r13
-pop       r14
-pop       r15
 ret
-mov       edx,[r14+8]
-mov       eax,edx
-mov       [rsp+3C],eax
-cmp       eax,r10d
-jbe       short 00007FFE427636C9
-movsxd    rdx,r10d
-lea       r10,[rdx+rdx*2]
-mov       [rsp+40],r10
-lea       r11,[r14+r10*8+10]
-cmp       [r11+4],r12d
-jne       short 00007FFE427636DF
-mov       [rsp+30],r9
-mov       [rsp+28],r11
-mov       rdx,[r11+8]
-mov       rcx,r15
-mov       r8,rdi
-mov       r11,7FFE423E0400
-cmp       [rcx],ecx
-call      qword ptr [7FFE42770400]
-test      eax,eax
-mov       r9,[rsp+30]
-je        short 00007FFE427636DF
-movzx     r13d,bpl
-cmp       r13d,1
-jne       short 00007FFE427636D0
-mov       r13,[rsp+28]
-mov       [r13+10],rbx
-inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE427637B6
-mov       r15d,[rsp+3C]
-jmp       short 00007FFE427636FE
-cmp       r13d,2
-je        near ptr 00007FFE427637DB
-jmp       near ptr 00007FFE42763646
-mov       r10,[rsp+40]
-mov       r10d,[r14+r10*8+10]
-mov       eax,[rsp+3C]
-cmp       eax,r13d
-jle       near ptr 00007FFE427637E4
-inc       r13d
-jmp       near ptr 00007FFE42763659
-xor       ebp,ebp
-mov       ecx,[rsi+38]
-test      ecx,ecx
-jle       short 00007FFE42763717
-mov       r13d,[rsi+34]
-mov       ebp,1
-dec       ecx
-mov       [rsi+38],ecx
-jmp       short 00007FFE42763766
-mov       ecx,[rsi+30]
-mov       r13d,ecx
-cmp       r15d,r13d
-jne       short 00007FFE4276375B
-call      System.Collections.HashHelpers.ExpandPrime(Int32)
-mov       edx,eax
-mov       rcx,rsi
-xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
-mov       rcx,[rsi+8]
-mov       r8,rcx
-mov       eax,r12d
-xor       edx,edx
-div       dword ptr [rcx+8]
-cmp       edx,[r8+8]
-jae       near ptr 00007FFE427637EA
-movsxd    rax,edx
-lea       r9,[r8+rax*4+10]
-mov       r15,r9
-mov       r9,r15
-lea       eax,[r13+1]
-mov       [rsi+30],eax
-mov       r14,[rsi+10]
-mov       eax,[r14+8]
-cmp       r13d,eax
-jae       short 00007FFE427637EA
-movsxd    rcx,r13d
-lea       rcx,[rcx+rcx*2]
-lea       rcx,[r14+rcx*8+10]
-test      ebp,ebp
-je        short 00007FFE4276379A
-mov       edx,[rsi+34]
-cmp       edx,eax
-jae       short 00007FFE427637EA
-movsxd    rax,edx
-lea       rax,[rax+rax*2]
-mov       eax,[r14+rax*8+10]
-neg       eax
-add       eax,0FFFFFFFD
-mov       [rsi+34],eax
-mov       [rcx+4],r12d
-mov       eax,[r9]
-dec       eax
-mov       [rcx],eax
-mov       [rcx+8],rdi
-mov       [rcx+10],rbx
-inc       r13d
-mov       [r9],r13d
-inc       dword ptr [rsi+3C]
-mov       eax,1
-add       rsp,48
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r12
-pop       r13
-pop       r14
-pop       r15
-ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
-int       3
-call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
-int       3
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
-int       3
-call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
-int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
@@ -696,7 +268,7 @@ int       3
 </table>
 <table>
 <thead>
-<tr><th colspan="2">FibonacciCalc.IterativeDictionary</th></tr>
+<tr><th colspan="2">FibonacciCalc.IterativeWithArray</th></tr>
 <tr>
 <th>.NET Core 3.1.5 (CoreCLR 4.700.20.26901, CoreFX 4.700.20.27001), X64 RyuJIT</th>
 <th>.NET Core 3.1.5 (CoreCLR 4.700.20.26901, CoreFX 4.700.20.27001), X64 RyuJIT</th>
@@ -705,17 +277,140 @@ int       3
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
-Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeDictionary(UInt64)
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeWithArray(Int32)
+push      rsi
+sub       rsp,20
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5D2981
+cmp       esi,2
+jne       short 00007FFA5C5D298C
+mov       eax,1
+add       rsp,20
+pop       rsi
+ret
+lea       edx,[rsi+1]
+movsxd    rdx,edx
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       edx,[rax+8]
+cmp       edx,1
+jbe       short 00007FFA5C5D2A0E
+mov       qword ptr [rax+18],1
+cmp       edx,2
+jbe       short 00007FFA5C5D2A0E
+mov       qword ptr [rax+20],2
+mov       ecx,3
+cmp       esi,3
+jl        short 00007FFA5C5D29FC
+lea       r8d,[rcx+0FFFF]
+cmp       r8d,edx
+jae       short 00007FFA5C5D2A0E
+movsxd    r8,r8d
+mov       r8,[rax+r8*8+10]
+lea       r9d,[rcx+0FFFE]
+cmp       r9d,edx
+jae       short 00007FFA5C5D2A0E
+movsxd    r9,r9d
+add       r8,[rax+r9*8+10]
+cmp       ecx,edx
+jae       short 00007FFA5C5D2A0E
+movsxd    r9,ecx
+mov       [rax+r9*8+10],r8
+inc       ecx
+cmp       ecx,esi
+jle       short 00007FFA5C5D29C8
+cmp       esi,edx
+jae       short 00007FFA5C5D2A0E
+movsxd    rdx,esi
+mov       rax,[rax+rdx*8+10]
+add       rsp,20
+pop       rsi
+ret
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeWithArray(Int32)
+push      rsi
+sub       rsp,20
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5E2AB1
+cmp       esi,2
+jne       short 00007FFA5C5E2ABC
+mov       eax,1
+add       rsp,20
+pop       rsi
+ret
+lea       edx,[rsi+1]
+movsxd    rdx,edx
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       edx,[rax+8]
+cmp       edx,1
+jbe       short 00007FFA5C5E2B3E
+mov       qword ptr [rax+18],1
+cmp       edx,2
+jbe       short 00007FFA5C5E2B3E
+mov       qword ptr [rax+20],2
+mov       ecx,3
+cmp       esi,3
+jl        short 00007FFA5C5E2B2C
+lea       r8d,[rcx+0FFFF]
+cmp       r8d,edx
+jae       short 00007FFA5C5E2B3E
+movsxd    r8,r8d
+mov       r8,[rax+r8*8+10]
+lea       r9d,[rcx+0FFFE]
+cmp       r9d,edx
+jae       short 00007FFA5C5E2B3E
+movsxd    r9,r9d
+add       r8,[rax+r9*8+10]
+cmp       ecx,edx
+jae       short 00007FFA5C5E2B3E
+movsxd    r9,ecx
+mov       [rax+r9*8+10],r8
+inc       ecx
+cmp       ecx,esi
+jle       short 00007FFA5C5E2AF8
+cmp       esi,edx
+jae       short 00007FFA5C5E2B3E
+movsxd    rdx,esi
+mov       rax,[rax+rdx*8+10]
+add       rsp,20
+pop       rsi
+ret
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.IterativeWithDictionary</th></tr>
+<tr>
+<th>.NET Core 3.1.5 (CoreCLR 4.700.20.26901, CoreFX 4.700.20.27001), X64 RyuJIT</th>
+<th>.NET Core 3.1.5 (CoreCLR 4.700.20.26901, CoreFX 4.700.20.27001), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeWithDictionary(Int32)
 push      rdi
 push      rsi
 push      rbp
 push      rbx
 sub       rsp,28
-mov       rsi,rdx
-cmp       rsi,1
-je        short 00007FFE42783237
-cmp       rsi,2
-jne       short 00007FFE42783245
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5B2D84
+cmp       esi,2
+jne       short 00007FFA5C5B2D92
 mov       eax,1
 add       rsp,28
 pop       rbx
@@ -723,45 +418,44 @@ pop       rbp
 pop       rsi
 pop       rdi
 ret
-mov       rcx,offset MT_System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]
+mov       rcx,offset MT_System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rdi,rax
 mov       rcx,rdi
 xor       edx,edx
 xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<UInt64>)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<Int32>)
 mov       rcx,rdi
 mov       edx,1
 mov       r8d,1
 mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 mov       rcx,rdi
 mov       edx,2
 mov       r8d,1
 mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 mov       ebx,3
-cmp       rsi,3
-jb        short 00007FFE427832D9
+cmp       esi,3
+jl        short 00007FFA5C5B2E22
 lea       edx,[rbx+0FFFF]
 mov       rcx,rdi
-call      qword ptr [7FFE427847F8]
+call      qword ptr [7FFA5C5BF370]
 mov       rbp,rax
 lea       edx,[rbx+0FFFE]
 mov       rcx,rdi
-call      qword ptr [7FFE427847F8]
+call      qword ptr [7FFA5C5BF370]
 lea       r8,[rax+rbp]
+mov       rcx,rdi
 mov       edx,ebx
-mov       rcx,rdi
 mov       r9d,1
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 inc       ebx
-mov       ecx,ebx
-cmp       rcx,rsi
-jbe       short 00007FFE427832A1
+cmp       ebx,esi
+jle       short 00007FFA5C5B2DED
 mov       rcx,rdi
-mov       rdx,rsi
-mov       rax,[7FFE427847F8]
+mov       edx,esi
+mov       rax,[7FFA5C5BF370]
 add       rsp,28
 pop       rbx
 pop       rbp
@@ -769,21 +463,21 @@ pop       rsi
 pop       rdi
 jmp       rax
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<UInt64>)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<Int32>)
 push      rdi
 push      rsi
 sub       rsp,28
 mov       rdi,rcx
 mov       rsi,r8
 test      edx,edx
-jl        short 00007FFE427873DF
+jl        short 00007FFA5C5B72FF
 test      edx,edx
-jle       short 00007FFE427873BC
+jle       short 00007FFA5C5B72DC
 mov       rcx,rdi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
-mov       rdx,2322FEE2DC8
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
+mov       rdx,21663C12E90
 cmp       rsi,[rdx]
-je        short 00007FFE427873D7
+je        short 00007FFA5C5B72F7
 lea       rcx,[rdi+18]
 mov       rdx,rsi
 call      CORINFO_HELP_ASSIGN_REF
@@ -796,7 +490,7 @@ mov       ecx,16
 call      System.ThrowHelper.ThrowArgumentOutOfRangeException(System.ExceptionArgument)
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 push      r15
 push      r14
 push      r13
@@ -807,29 +501,26 @@ push      rbp
 push      rbx
 sub       rsp,48
 mov       rsi,rcx
-mov       rdi,rdx
+mov       edi,edx
 mov       rbx,r8
 mov       ebp,r9d
 cmp       qword ptr [rsi+8],0
-jne       short 00007FFE4278333D
+jne       short 00007FFA5C5B2FAC
 mov       rcx,rsi
 xor       edx,edx
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
 mov       r14,[rsi+10]
 mov       r15,[rsi+18]
 test      r15,r15
-je        short 00007FFE42783367
+je        short 00007FFA5C5B2FD5
 mov       rcx,r15
-mov       rdx,rdi
-mov       r11,7FFE424003F8
+mov       edx,edi
+mov       r11,7FFA5C2303F8
 cmp       [rcx],ecx
-call      qword ptr [7FFE427903F8]
+call      qword ptr [7FFA5C5C03F8]
 mov       r12d,eax
-jmp       short 00007FFE42783374
-mov       rax,rdi
-shr       rax,20
-mov       r12d,eax
-xor       r12d,edi
+jmp       short 00007FFA5C5B2FD8
+mov       r12d,edi
 xor       r13d,r13d
 mov       rcx,[rsi+8]
 mov       r8,rcx
@@ -837,40 +528,40 @@ mov       eax,r12d
 xor       edx,edx
 div       dword ptr [rcx+8]
 cmp       edx,[r8+8]
-jae       near ptr 00007FFE427835AA
+jae       near ptr 00007FFA5C5B3209
 movsxd    rax,edx
 lea       r9,[r8+rax*4+10]
 mov       r10d,[r9]
 dec       r10d
 test      r15,r15
-jne       short 00007FFE42783419
+jne       short 00007FFA5C5B307B
 mov       r15d,[r14+8]
 cmp       r15d,r10d
-jbe       near ptr 00007FFE427834BE
+jbe       near ptr 00007FFA5C5B3120
 movsxd    r10,r10d
 lea       rax,[r10+r10*2]
 lea       rdx,[r14+rax*8+10]
 cmp       [rdx+4],r12d
-jne       short 00007FFE427833D3
-mov       rcx,[rdx+8]
-cmp       rcx,rdi
+jne       short 00007FFA5C5B3035
+mov       ecx,[rdx+8]
+cmp       ecx,edi
 sete      cl
 movzx     ecx,cl
 test      ecx,ecx
-jne       short 00007FFE427833E6
+jne       short 00007FFA5C5B3048
 mov       r10d,[r14+rax*8+10]
 cmp       r15d,r13d
-jle       near ptr 00007FFE42783595
+jle       near ptr 00007FFA5C5B31F5
 inc       r13d
-jmp       short 00007FFE427833A7
+jmp       short 00007FFA5C5B300B
 movzx     r13d,bpl
 cmp       r13d,1
-jne       short 00007FFE427833FC
+jne       short 00007FFA5C5B305E
 mov       [rdx+10],rbx
 inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE42783576
+jmp       near ptr 00007FFA5C5B31D7
 cmp       r13d,2
-je        near ptr 00007FFE4278358C
+je        near ptr 00007FFA5C5B31ED
 xor       eax,eax
 add       rsp,48
 pop       rbx
@@ -886,68 +577,68 @@ mov       edx,[r14+8]
 mov       eax,edx
 mov       [rsp+3C],eax
 cmp       eax,r10d
-jbe       short 00007FFE42783489
+jbe       short 00007FFA5C5B30EB
 movsxd    rdx,r10d
 lea       r10,[rdx+rdx*2]
 mov       [rsp+40],r10
 lea       r11,[r14+r10*8+10]
 cmp       [r11+4],r12d
-jne       short 00007FFE4278349F
+jne       short 00007FFA5C5B3101
 mov       [rsp+30],r9
 mov       [rsp+28],r11
-mov       rdx,[r11+8]
+mov       edx,[r11+8]
 mov       rcx,r15
-mov       r8,rdi
-mov       r11,7FFE424003F0
+mov       r8d,edi
+mov       r11,7FFA5C2303F0
 cmp       [rcx],ecx
-call      qword ptr [7FFE427903F0]
+call      qword ptr [7FFA5C5C03F0]
 test      eax,eax
 mov       r9,[rsp+30]
-je        short 00007FFE4278349F
+je        short 00007FFA5C5B3101
 movzx     r13d,bpl
 cmp       r13d,1
-jne       short 00007FFE42783490
+jne       short 00007FFA5C5B30F2
 mov       r13,[rsp+28]
 mov       [r13+10],rbx
 inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE42783576
+jmp       near ptr 00007FFA5C5B31D7
 mov       r15d,[rsp+3C]
-jmp       short 00007FFE427834BE
+jmp       short 00007FFA5C5B3120
 cmp       r13d,2
-je        near ptr 00007FFE4278359B
-jmp       near ptr 00007FFE42783406
+je        near ptr 00007FFA5C5B31FB
+jmp       near ptr 00007FFA5C5B3068
 mov       r10,[rsp+40]
 mov       r10d,[r14+r10*8+10]
 mov       eax,[rsp+3C]
 cmp       eax,r13d
-jle       near ptr 00007FFE427835A4
+jle       near ptr 00007FFA5C5B3203
 inc       r13d
-jmp       near ptr 00007FFE42783419
+jmp       near ptr 00007FFA5C5B307B
 xor       ebp,ebp
 mov       ecx,[rsi+38]
 test      ecx,ecx
-jle       short 00007FFE427834D7
+jle       short 00007FFA5C5B3139
 mov       r13d,[rsi+34]
 mov       ebp,1
 dec       ecx
 mov       [rsi+38],ecx
-jmp       short 00007FFE42783526
+jmp       short 00007FFA5C5B3188
 mov       ecx,[rsi+30]
 mov       r13d,ecx
 cmp       r15d,r13d
-jne       short 00007FFE4278351B
+jne       short 00007FFA5C5B317D
 call      System.Collections.HashHelpers.ExpandPrime(Int32)
 mov       edx,eax
 mov       rcx,rsi
 xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
 mov       rcx,[rsi+8]
 mov       r8,rcx
 mov       eax,r12d
 xor       edx,edx
 div       dword ptr [rcx+8]
 cmp       edx,[r8+8]
-jae       near ptr 00007FFE427835AA
+jae       near ptr 00007FFA5C5B3209
 movsxd    rax,edx
 lea       r9,[r8+rax*4+10]
 mov       r15,r9
@@ -957,15 +648,15 @@ mov       [rsi+30],eax
 mov       r14,[rsi+10]
 mov       eax,[r14+8]
 cmp       r13d,eax
-jae       short 00007FFE427835AA
+jae       short 00007FFA5C5B3209
 movsxd    rcx,r13d
 lea       rcx,[rcx+rcx*2]
 lea       rcx,[r14+rcx*8+10]
 test      ebp,ebp
-je        short 00007FFE4278355A
+je        short 00007FFA5C5B31BC
 mov       edx,[rsi+34]
 cmp       edx,eax
-jae       short 00007FFE427835AA
+jae       short 00007FFA5C5B3209
 movsxd    rax,edx
 lea       rax,[rax+rax*2]
 mov       eax,[r14+rax*8+10]
@@ -976,7 +667,7 @@ mov       [rcx+4],r12d
 mov       eax,[r9]
 dec       eax
 mov       [rcx],eax
-mov       [rcx+8],rdi
+mov       [rcx+8],edi
 mov       [rcx+10],rbx
 inc       r13d
 mov       [r9],r13d
@@ -992,33 +683,33 @@ pop       r13
 pop       r14
 pop       r15
 ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
 int       3
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
 int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].get_Item(UInt64)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].get_Item(Int32)
 push      rdi
 push      rsi
 sub       rsp,28
 mov       rsi,rcx
-mov       rdi,rdx
+mov       edi,edx
 mov       rcx,rsi
-mov       rdx,rdi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(UInt64)
+mov       edx,edi
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(Int32)
 test      eax,eax
-jl        short 00007FFE42787377
+jl        short 00007FFA5C5B7295
 mov       rcx,[rsi+10]
 cmp       eax,[rcx+8]
-jae       short 00007FFE42787380
+jae       short 00007FFA5C5B729D
 movsxd    rax,eax
 lea       rax,[rax+rax*2]
 mov       rax,[rcx+rax*8+20]
@@ -1026,25 +717,25 @@ add       rsp,28
 pop       rsi
 pop       rdi
 ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowKeyNotFoundException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowKeyNotFoundException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeDictionary(UInt64)
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.IterativeWithDictionary(Int32)
 push      rdi
 push      rsi
 push      rbp
 push      rbx
 sub       rsp,28
-mov       rsi,rdx
-cmp       rsi,1
-je        short 00007FFE42773237
-cmp       rsi,2
-jne       short 00007FFE42773245
+mov       esi,edx
+cmp       esi,1
+je        short 00007FFA5C5E2EB4
+cmp       esi,2
+jne       short 00007FFA5C5E2EC2
 mov       eax,1
 add       rsp,28
 pop       rbx
@@ -1052,45 +743,44 @@ pop       rbp
 pop       rsi
 pop       rdi
 ret
-mov       rcx,offset MT_System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]
+mov       rcx,offset MT_System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rdi,rax
 mov       rcx,rdi
 xor       edx,edx
 xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<UInt64>)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<Int32>)
 mov       rcx,rdi
 mov       edx,1
 mov       r8d,1
 mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 mov       rcx,rdi
 mov       edx,2
 mov       r8d,1
 mov       r9d,2
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 mov       ebx,3
-cmp       rsi,3
-jb        short 00007FFE427732D9
+cmp       esi,3
+jl        short 00007FFA5C5E2F52
 lea       edx,[rbx+0FFFF]
 mov       rcx,rdi
-call      qword ptr [7FFE427747F8]
+call      qword ptr [7FFA5C5EF370]
 mov       rbp,rax
 lea       edx,[rbx+0FFFE]
 mov       rcx,rdi
-call      qword ptr [7FFE427747F8]
+call      qword ptr [7FFA5C5EF370]
 lea       r8,[rax+rbp]
+mov       rcx,rdi
 mov       edx,ebx
-mov       rcx,rdi
 mov       r9d,1
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 inc       ebx
-mov       ecx,ebx
-cmp       rcx,rsi
-jbe       short 00007FFE427732A1
+cmp       ebx,esi
+jle       short 00007FFA5C5E2F1D
 mov       rcx,rdi
-mov       rdx,rsi
-mov       rax,[7FFE427747F8]
+mov       edx,esi
+mov       rax,[7FFA5C5EF370]
 add       rsp,28
 pop       rbx
 pop       rbp
@@ -1098,21 +788,21 @@ pop       rsi
 pop       rdi
 jmp       rax
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<UInt64>)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]]..ctor(Int32, System.Collections.Generic.IEqualityComparer`1<Int32>)
 push      rdi
 push      rsi
 sub       rsp,28
 mov       rdi,rcx
 mov       rsi,r8
 test      edx,edx
-jl        short 00007FFE427773FF
+jl        short 00007FFA5C5E720F
 test      edx,edx
-jle       short 00007FFE427773DC
+jle       short 00007FFA5C5E71EC
 mov       rcx,rdi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
-mov       rdx,2291F5D2DC8
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
+mov       rdx,1CF90002E90
 cmp       rsi,[rdx]
-je        short 00007FFE427773F7
+je        short 00007FFA5C5E7207
 lea       rcx,[rdi+18]
 mov       rdx,rsi
 call      CORINFO_HELP_ASSIGN_REF
@@ -1125,7 +815,7 @@ mov       ecx,16
 call      System.ThrowHelper.ThrowArgumentOutOfRangeException(System.ExceptionArgument)
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(UInt64, UInt64, System.Collections.Generic.InsertionBehavior)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].TryInsert(Int32, UInt64, System.Collections.Generic.InsertionBehavior)
 push      r15
 push      r14
 push      r13
@@ -1136,29 +826,26 @@ push      rbp
 push      rbx
 sub       rsp,48
 mov       rsi,rcx
-mov       rdi,rdx
+mov       edi,edx
 mov       rbx,r8
 mov       ebp,r9d
 cmp       qword ptr [rsi+8],0
-jne       short 00007FFE4277333D
+jne       short 00007FFA5C5E30DC
 mov       rcx,rsi
 xor       edx,edx
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
 mov       r14,[rsi+10]
 mov       r15,[rsi+18]
 test      r15,r15
-je        short 00007FFE42773367
+je        short 00007FFA5C5E3105
 mov       rcx,r15
-mov       rdx,rdi
-mov       r11,7FFE423F03F8
+mov       edx,edi
+mov       r11,7FFA5C2603F8
 cmp       [rcx],ecx
-call      qword ptr [7FFE427803F8]
+call      qword ptr [7FFA5C5F03F8]
 mov       r12d,eax
-jmp       short 00007FFE42773374
-mov       rax,rdi
-shr       rax,20
-mov       r12d,eax
-xor       r12d,edi
+jmp       short 00007FFA5C5E3108
+mov       r12d,edi
 xor       r13d,r13d
 mov       rcx,[rsi+8]
 mov       r8,rcx
@@ -1166,40 +853,40 @@ mov       eax,r12d
 xor       edx,edx
 div       dword ptr [rcx+8]
 cmp       edx,[r8+8]
-jae       near ptr 00007FFE427735AA
+jae       near ptr 00007FFA5C5E3339
 movsxd    rax,edx
 lea       r9,[r8+rax*4+10]
 mov       r10d,[r9]
 dec       r10d
 test      r15,r15
-jne       short 00007FFE42773419
+jne       short 00007FFA5C5E31AB
 mov       r15d,[r14+8]
 cmp       r15d,r10d
-jbe       near ptr 00007FFE427734BE
+jbe       near ptr 00007FFA5C5E3250
 movsxd    r10,r10d
 lea       rax,[r10+r10*2]
 lea       rdx,[r14+rax*8+10]
 cmp       [rdx+4],r12d
-jne       short 00007FFE427733D3
-mov       rcx,[rdx+8]
-cmp       rcx,rdi
+jne       short 00007FFA5C5E3165
+mov       ecx,[rdx+8]
+cmp       ecx,edi
 sete      cl
 movzx     ecx,cl
 test      ecx,ecx
-jne       short 00007FFE427733E6
+jne       short 00007FFA5C5E3178
 mov       r10d,[r14+rax*8+10]
 cmp       r15d,r13d
-jle       near ptr 00007FFE42773595
+jle       near ptr 00007FFA5C5E3325
 inc       r13d
-jmp       short 00007FFE427733A7
+jmp       short 00007FFA5C5E313B
 movzx     r13d,bpl
 cmp       r13d,1
-jne       short 00007FFE427733FC
+jne       short 00007FFA5C5E318E
 mov       [rdx+10],rbx
 inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE42773576
+jmp       near ptr 00007FFA5C5E3307
 cmp       r13d,2
-je        near ptr 00007FFE4277358C
+je        near ptr 00007FFA5C5E331D
 xor       eax,eax
 add       rsp,48
 pop       rbx
@@ -1215,68 +902,68 @@ mov       edx,[r14+8]
 mov       eax,edx
 mov       [rsp+3C],eax
 cmp       eax,r10d
-jbe       short 00007FFE42773489
+jbe       short 00007FFA5C5E321B
 movsxd    rdx,r10d
 lea       r10,[rdx+rdx*2]
 mov       [rsp+40],r10
 lea       r11,[r14+r10*8+10]
 cmp       [r11+4],r12d
-jne       short 00007FFE4277349F
+jne       short 00007FFA5C5E3231
 mov       [rsp+30],r9
 mov       [rsp+28],r11
-mov       rdx,[r11+8]
+mov       edx,[r11+8]
 mov       rcx,r15
-mov       r8,rdi
-mov       r11,7FFE423F03F0
+mov       r8d,edi
+mov       r11,7FFA5C2603F0
 cmp       [rcx],ecx
-call      qword ptr [7FFE427803F0]
+call      qword ptr [7FFA5C5F03F0]
 test      eax,eax
 mov       r9,[rsp+30]
-je        short 00007FFE4277349F
+je        short 00007FFA5C5E3231
 movzx     r13d,bpl
 cmp       r13d,1
-jne       short 00007FFE42773490
+jne       short 00007FFA5C5E3222
 mov       r13,[rsp+28]
 mov       [r13+10],rbx
 inc       dword ptr [rsi+3C]
-jmp       near ptr 00007FFE42773576
+jmp       near ptr 00007FFA5C5E3307
 mov       r15d,[rsp+3C]
-jmp       short 00007FFE427734BE
+jmp       short 00007FFA5C5E3250
 cmp       r13d,2
-je        near ptr 00007FFE4277359B
-jmp       near ptr 00007FFE42773406
+je        near ptr 00007FFA5C5E332B
+jmp       near ptr 00007FFA5C5E3198
 mov       r10,[rsp+40]
 mov       r10d,[r14+r10*8+10]
 mov       eax,[rsp+3C]
 cmp       eax,r13d
-jle       near ptr 00007FFE427735A4
+jle       near ptr 00007FFA5C5E3333
 inc       r13d
-jmp       near ptr 00007FFE42773419
+jmp       near ptr 00007FFA5C5E31AB
 xor       ebp,ebp
 mov       ecx,[rsi+38]
 test      ecx,ecx
-jle       short 00007FFE427734D7
+jle       short 00007FFA5C5E3269
 mov       r13d,[rsi+34]
 mov       ebp,1
 dec       ecx
 mov       [rsi+38],ecx
-jmp       short 00007FFE42773526
+jmp       short 00007FFA5C5E32B8
 mov       ecx,[rsi+30]
 mov       r13d,ecx
 cmp       r15d,r13d
-jne       short 00007FFE4277351B
+jne       short 00007FFA5C5E32AD
 call      System.Collections.HashHelpers.ExpandPrime(Int32)
 mov       edx,eax
 mov       rcx,rsi
 xor       r8d,r8d
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Resize(Int32, Boolean)
 mov       rcx,[rsi+8]
 mov       r8,rcx
 mov       eax,r12d
 xor       edx,edx
 div       dword ptr [rcx+8]
 cmp       edx,[r8+8]
-jae       near ptr 00007FFE427735AA
+jae       near ptr 00007FFA5C5E3339
 movsxd    rax,edx
 lea       r9,[r8+rax*4+10]
 mov       r15,r9
@@ -1286,15 +973,15 @@ mov       [rsi+30],eax
 mov       r14,[rsi+10]
 mov       eax,[r14+8]
 cmp       r13d,eax
-jae       short 00007FFE427735AA
+jae       short 00007FFA5C5E3339
 movsxd    rcx,r13d
 lea       rcx,[rcx+rcx*2]
 lea       rcx,[r14+rcx*8+10]
 test      ebp,ebp
-je        short 00007FFE4277355A
+je        short 00007FFA5C5E32EC
 mov       edx,[rsi+34]
 cmp       edx,eax
-jae       short 00007FFE427735AA
+jae       short 00007FFA5C5E3339
 movsxd    rax,edx
 lea       rax,[rax+rax*2]
 mov       eax,[r14+rax*8+10]
@@ -1305,7 +992,7 @@ mov       [rcx+4],r12d
 mov       eax,[r9]
 dec       eax
 mov       [rcx],eax
-mov       [rcx+8],rdi
+mov       [rcx+8],edi
 mov       [rcx+10],rbx
 inc       r13d
 mov       [r9],r13d
@@ -1321,33 +1008,33 @@ pop       r13
 pop       r14
 pop       r15
 ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
 int       3
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowAddingDuplicateWithKeyArgumentException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      System.ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported()
 int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
 
-System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].get_Item(UInt64)
+System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].get_Item(Int32)
 push      rdi
 push      rsi
 sub       rsp,28
 mov       rsi,rcx
-mov       rdi,rdx
+mov       edi,edx
 mov       rcx,rsi
-mov       rdx,rdi
-call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(UInt64)
+mov       edx,edi
+call      System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].FindEntry(Int32)
 test      eax,eax
-jl        short 00007FFE42777377
+jl        short 00007FFA5C5E70E5
 mov       rcx,[rsi+10]
 cmp       eax,[rcx+8]
-jae       short 00007FFE42777380
+jae       short 00007FFA5C5E70ED
 movsxd    rax,eax
 lea       rax,[rax+rax*2]
 mov       rax,[rcx+rax*8+20]
@@ -1355,8 +1042,8 @@ add       rsp,28
 pop       rsi
 pop       rdi
 ret
-mov       rcx,rdi
-call      System.ThrowHelper.ThrowKeyNotFoundException[[System.UInt64, System.Private.CoreLib]](UInt64)
+mov       ecx,edi
+call      System.ThrowHelper.ThrowKeyNotFoundException[[System.Int32, System.Private.CoreLib]](Int32)
 int       3
 call      CORINFO_HELP_RNGCHKFAIL
 int       3
@@ -1378,53 +1065,53 @@ int       3
 <td style="vertical-align:top;"><pre><code>
 Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
 cmp       rdx,1
-je        short 00007FFE42762F4C
+je        short 00007FFA5C5F297C
 cmp       rdx,2
-jne       short 00007FFE42762F52
+jne       short 00007FFA5C5F2982
 mov       eax,1
 ret
 mov       eax,1
 mov       ecx,1
 mov       r8d,3
 cmp       rdx,3
-jb        short 00007FFE42762F7F
+jb        short 00007FFA5C5F29AF
 add       rcx,rax
 inc       r8d
 mov       r9d,r8d
 cmp       r9,rdx
-jbe       short 00007FFE42762F7A
+jbe       short 00007FFA5C5F29AA
 mov       rax,rcx
 ret
 xchg      rax,rcx
-jmp       short 00007FFE42762F68
+jmp       short 00007FFA5C5F2998
 mov       rcx,rax
-jmp       short 00007FFE42762F76
+jmp       short 00007FFA5C5F29A6
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
 cmp       rdx,1
-je        short 00007FFE42762F4C
+je        short 00007FFA5C5F297C
 cmp       rdx,2
-jne       short 00007FFE42762F52
+jne       short 00007FFA5C5F2982
 mov       eax,1
 ret
 mov       eax,1
 mov       ecx,1
 mov       r8d,3
 cmp       rdx,3
-jb        short 00007FFE42762F7F
+jb        short 00007FFA5C5F29AF
 add       rcx,rax
 inc       r8d
 mov       r9d,r8d
 cmp       r9,rdx
-jbe       short 00007FFE42762F7A
+jbe       short 00007FFA5C5F29AA
 mov       rax,rcx
 ret
 xchg      rax,rcx
-jmp       short 00007FFE42762F68
+jmp       short 00007FFA5C5F2998
 mov       rcx,rax
-jmp       short 00007FFE42762F76
+jmp       short 00007FFA5C5F29A6
 
 </code></pre></td>
 </tr>
